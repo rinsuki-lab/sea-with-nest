@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  ci:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -19,6 +19,15 @@ jobs:
         name: prettier --check
       - run: yarn lint
         name: tslint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: yarn install
+        name: Install Dependencies
       - run: yarn test
         name: test
       - run: yarn test:e2e
