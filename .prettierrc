@@ -1,4 +1,12 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all"
+    "singleQuote": false,
+    "trailingComma": "all",
+    "semi": false,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": { "tabWidth": 2 }
+        }
+    ]
 }
